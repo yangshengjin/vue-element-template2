@@ -3,6 +3,7 @@ import './plugins/element.js'
 
 import App from './App.vue'
 import router from './router'
+import './permission' // permission control
 import store from './store'
 import '@/styles/base.scss' // global css
 Vue.config.productionTip = false

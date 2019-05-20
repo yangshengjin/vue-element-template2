@@ -56,6 +56,7 @@
 import mTable from '@/components/CmTable'
 import vehicleForm from './dialog/vehicle-form'
 export default {
+  name: 'Page1',
   components: {
     mTable,
     vehicleForm

@@ -36,7 +36,7 @@ const state = {
   menus: menus, // 存储菜单数据
   responseData: {
     // 服务端接口返回的数据保存在这里
-    UserInfo: UserInfo
+    UserInfo: UserInfo || {}
   }
 }
 

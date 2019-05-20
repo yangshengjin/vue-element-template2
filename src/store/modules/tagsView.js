@@ -1,3 +1,17 @@
+import ModuleList from '@/libs/moduleList'
+/** @param {String} fullPath
+ *  @return {Object} {path: '', name: ''}
+ **/
+function generateRoute(route) {
+  const newmoduleList = new ModuleList()
+  const initAuths = newmoduleList.initAuths
+  var routeMatched = initAuths.filter(el => '/' + el.sign === route.fullPath)
+  if (routeMatched.length > 0 && routeMatched[0].name) {
+    return routeMatched[0].name
+  } else {
+    return route.name
+  }
+}
 const tagsView = {
   namespaced: true,
   state: {
@@ -9,7 +23,7 @@ const tagsView = {
       if (state.visitedViews.some(v => v.path === view.path)) return
       state.visitedViews.push(
         Object.assign({}, view, {
-          title: view.meta.title || 'no-name'
+          title: generateRoute(view) || 'no-name'
         })
       )
     },
