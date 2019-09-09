@@ -52,6 +52,9 @@ export default {
   watch: {
     'status' (e) {
       this.$emit('input', e)
+    },
+    'value' (e) {
+      this.status = e
     }
   },
   created () {
