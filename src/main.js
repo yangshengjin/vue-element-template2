@@ -19,8 +19,13 @@ Object.keys(filters).forEach(k => Vue.filter(k, filters[k]))
 Object.defineProperty(Vue.prototype, '$commonApi', {
   value: require('./api/common')
 })
+
+// 自定义指令
+import onlyNum from './directive/onlyNum'
+Vue.use(onlyNum)
 new Vue({
+  el: '#app',
   router,
   store,
   render: h => h(App)
-}).$mount('#app')
+})

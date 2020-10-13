@@ -1,4 +1,5 @@
-const API = 'cwxt-base-cms'
+import { apiPrefix } from '../config/env'
+const API = apiPrefix
 const fetchApi = require('./fetch').fetchApi
 
 /**
